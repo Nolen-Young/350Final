@@ -10,11 +10,43 @@ import sys
 
 
 def main(args):
-    cMax = findCMax(args)
-    print(cMax)
-    print(findKC(34))
-    print(findBI(34))
+    Q = ((int(args[0]), int(args[1]), int(args[2]), int(args[3])),
+         (int(args[4]), int(args[5]), int(args[6]), int(args[7])))
+    print("Equations: {}".format(Q))
+
+    FAQ1 = constructFA(Q[0], 1)
+    FAQ2 = constructFA(Q[1], 2)
+    print("Finite Automata 1: {}".format(FAQ1))
+    print("Finite Automata 2: {}".format(FAQ2))
+
     return 1
+
+
+# this function will construct an FA based off the equations defined
+# in the tuple Q.
+def constructFA(eq, eqNum):
+    FA = {}
+    b = findB(eq[3])
+    cMax = findCMax(eq)
+    kc = findKC(eq[0])
+
+    for carry in range(-cMax, cMax+1):
+        for carryP in range(-cMax, cMax + 1):
+            for i in range(1, findKC(eq[3] + 1)):
+                for iP in range(1, findKC(eq[3] + 1)):
+                    for a1 in range(2):
+                        for a2 in range(2):
+                            for a3 in range(2):
+                                bi = b[i-1]
+                                R = (eq[0] * a1) + (eq[1] * a2) + (eq[2] * a3) + bi + carry
+                                if (R % 2 == 0 and carryP == R / 2):
+                                    if (i >= 1 and i <= kc):
+                                        iP = i + 1
+                                    else:
+                                        iP = i
+                                    FA[(carry, i)] = ((a1, a2, a3),(carryP, iP))
+
+    return FA
 
 
 # C: a tuple of 3 integers
@@ -26,10 +58,10 @@ def findCMax(C):
 
     # loop through all combinations of d1, d2, d3, d,
     # where d is in the set {0,1}
-    for i in range(0, 2):
-        for j in range(0, 2):
-            for k in range(0, 2):
-                for l in range(0, 2):
+    for i in range(2):
+        for j in range(2):
+            for k in range(2):
+                for l in range(2):
                     temp = abs(int(C[0]) * i + int(C[1]) * j + int(C[2]) * k + l)  # calc score
                     if temp > cMax:  # if larger than max, set as max
                         cMax = temp
@@ -45,7 +77,7 @@ def findKC(C):
 
 # this function returns bi, which represents all bits to represent
 # a given constant, C, where C >= 0
-def findBI(C):
+def findB(C):
     kc = findKC(C)
     bi = [0, ] * kc
     binary = str(bin(C))[2:]
@@ -58,7 +90,7 @@ def findBI(C):
 
 # this block of code calls main if the script parameters are correct,
 # and handles the exit code based off the results of main.
-if __name__ == "__main__" and len(sys.argv) == 4:
+if __name__ == "__main__" and len(sys.argv[1:]) == 8:
     if main(tuple(sys.argv[1:])):
         print("Done")
         exit(0)
