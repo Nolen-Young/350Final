@@ -174,5 +174,5 @@ if __name__ == "__main__" and len(sys.argv[1:]) == 8:
         print("Error: The program unexpectedly did not finish.")
         exit(1)
 else:
-    print("Error: Incorrect number arguments provided.")
+    print("Error: Incorrect number arguments provided. Arguments should be in the form C11 C12 C13 C1 C21 C22 C23 C2")
     exit(1)
