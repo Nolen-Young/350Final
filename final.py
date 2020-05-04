@@ -24,6 +24,15 @@ def main(args):
     return 1
 
 
+def computeCP(FA1, FA2):
+    for node1, edges1 in FA1.items():
+        for node2, edges2 in FA2.items():
+            print("{}, {}".format(node1, node2))
+
+
+    return 0
+
+
 # this function will construct an FA off the equations defined
 # in the tuple Q.
 def constructFA(eq, eqNum):
@@ -44,7 +53,11 @@ def constructFA(eq, eqNum):
                                 iP = i
                                 if (i >= 1 and i <= kc):
                                     iP = iP + 1
-                                FA[(carry, i)] = ((a1, a2, a3), (carryP, iP))
+
+                                if (carry, i) in FA.keys():
+                                    FA[(carry, i)].append(((a1, a2, a3), (carryP, iP)))
+                                else:
+                                    FA[(carry, i)] = [((a1, a2, a3), (carryP, iP))]
 
     return FA
 
