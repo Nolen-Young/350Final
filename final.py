@@ -24,29 +24,27 @@ def main(args):
     return 1
 
 
-# this function will construct an FA based off the equations defined
+# this function will construct an FA off the equations defined
 # in the tuple Q.
 def constructFA(eq, eqNum):
-    FA = {} # stores final result graph, key: start node, value: edge, end node
-    b = findB(eq[3]) # finds binary representation of C
-    cMax = findCMax(eq) # finds cMax
-    kc = findKC(eq[3]) # finds kc
+    FA = {}  # stores final result graph, key: start node, value: edge, end node
+    b = findB(eq[3])  # finds binary representation of C
+    cMax = findCMax(eq)  # finds cMax
+    kc = findKC(eq[3])  # finds kc
 
-    for carry in range(-cMax, cMax+1):
+    for carry in range(-cMax, cMax + 1):
         for carryP in range(-cMax, cMax + 1):
-            for i in range(1, findKC(eq[3] + 1)):
-                for iP in range(1, findKC(eq[3] + 1)):
-                    for a1 in range(2):
-                        for a2 in range(2):
-                            for a3 in range(2):
-                                bi = b[i-1] # INDEX MIGHT BE WRONG *************************************************
-                                R = (eq[0] * a1) + (eq[1] * a2) + (eq[2] * a3) + bi + carry
-                                if (R % 2 == 0 and carryP == R / 2):
-                                    if (i >= 1 and i <= kc):
-                                        iP = i + 1
-                                    else:
-                                        iP = i
-                                    FA[(carry, i)] = ((a1, a2, a3),(carryP, iP))
+            for i in range(1, kc + 2):
+                for a1 in range(2):
+                    for a2 in range(2):
+                        for a3 in range(2):
+                            bi = b[i - 2] # INDEX MIGHT BE WRONG *************************************************
+                            R = (eq[0] * a1) + (eq[1] * a2) + (eq[2] * a3) + bi + carry
+                            if (R % 2 == 0 and carryP == R / 2):
+                                iP = i
+                                if (i >= 1 and i <= kc):
+                                    iP = iP + 1
+                                FA[(carry, i)] = ((a1, a2, a3), (carryP, iP))
 
     return FA
 
