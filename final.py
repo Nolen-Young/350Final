@@ -14,16 +14,35 @@ def main(args):
          (int(args[4]), int(args[5]), int(args[6]), int(args[7])))
     print("Equations: {}".format(Q))
 
-    FAQ1 = constructFA(Q[0])
-    FAQ2 = constructFA(Q[1])
+    FAQ1 = constructFA(Q[0], 1)
+    FAQ2 = constructFA(Q[1], 2)
     print("Finite Automata 1: {}".format(FAQ1))
     print("Finite Automata 2: {}".format(FAQ2))
 
     return 1
 
+
 # this function will construct an FA based off the equations defined
 # in the tuple Q.
-def constructFA(eq):
+def constructFA(eq, eqNum):
+    FA = {}
+    cMax = findCMax(eq)
+    kc = findKC(eq[0])
+    count = 0;
+    for carry in range(-cMax, cMax+1):
+        for carryP in range(-cMax, cMax + 1):
+            for i in range(1, findKC(eq[3] + 1)):
+                for iP in range(1, findKC(eq[3] + 1)):
+                    for a1 in range(2):
+                        for a2 in range(2):
+                            for a3 in range(2):
+                                if(checkEdge(carry, carryP, i, iP, a1, a2, a3)):
+                                    FA[(carry, i)] = ((a1, a2, a3),(carryP, iP))
+                                    
+    return FA
+
+
+def checkEdge(carry, carryP, i, iP, a1, a1P, a2, a2P, a3, a3P):
     return 0
 
 
@@ -36,10 +55,10 @@ def findCMax(C):
 
     # loop through all combinations of d1, d2, d3, d,
     # where d is in the set {0,1}
-    for i in range(0, 2):
-        for j in range(0, 2):
-            for k in range(0, 2):
-                for l in range(0, 2):
+    for i in range(2):
+        for j in range(2):
+            for k in range(2):
+                for l in range(2):
                     temp = abs(int(C[0]) * i + int(C[1]) * j + int(C[2]) * k + l)  # calc score
                     if temp > cMax:  # if larger than max, set as max
                         cMax = temp
