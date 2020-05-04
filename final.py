@@ -10,11 +10,14 @@ import sys
 
 
 def main(args):
-    cMax = findCMax(args)
-    print(cMax)
-    print(findKC(34))
-    print(findBI(34))
+    Q = ((int(args[0]), int(args[1]), int(args[2]), int(args[3])),
+         (int(args[4]), int(args[5]), int(args[6]), int(args[7])))
+    print(Q)
     return 1
+
+
+def constructFA():
+    return 0
 
 
 # C: a tuple of 3 integers
@@ -58,7 +61,7 @@ def findBI(C):
 
 # this block of code calls main if the script parameters are correct,
 # and handles the exit code based off the results of main.
-if __name__ == "__main__" and len(sys.argv) == 4:
+if __name__ == "__main__" and len(sys.argv[1:]) == 8:
     if main(tuple(sys.argv[1:])):
         print("Done")
         exit(0)
