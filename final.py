@@ -26,9 +26,38 @@ def main(args):
     M = computeCP(M1, M2)
     print("M: {}\n".format(M))
 
-    # TODO - Find a walk along M, if a walk exists, return yes, else no
+    # Find a walk along M, if a walk exists, return yes, else no
+    kc1 = findKC(Q[0][3])
+    kc2 = findKC(Q[1][3])
+    test = DFS(M, ((0, 1), (0, 1)), ((0, kc1 + 1), (0, kc2 + 1)))
+    print("Path: {}".format(test))
+
+    if test:
+        print("Yes :D")
+    else:
+        print("No :(")
 
     return 1
+
+
+def DFS(M, init, accept):
+    visited = set()
+    path = ""
+    path = DFSHelper(visited, M, init, accept, path)
+    return path
+
+
+def DFSHelper(visited, graph, node, accept, path):
+    if node not in visited:
+        visited.add(node)
+        for neighbour in graph[node]:
+                newPath = "{}, {}".format(path, neighbour[0])
+                print(newPath)
+                if neighbour[1] == accept:
+                    return newPath
+                else:
+                    DFSHelper(visited, graph, neighbour[1], accept, newPath)
+
 
 
 # this algorithm computes the cartesian product of two finite
