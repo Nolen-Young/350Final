@@ -105,6 +105,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -158,21 +161,21 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="654" y="212" key="FileChooserDialogImpl/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588548207883" />
-    <state width="1659" height="158" key="GridCell.Tab.0.bottom" timestamp="1588559272104">
+    <state width="1659" height="158" key="GridCell.Tab.0.bottom" timestamp="1588559677408">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="158" key="GridCell.Tab.0.bottom/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588559272104" />
-    <state width="1659" height="158" key="GridCell.Tab.0.center" timestamp="1588559272103">
+    <state width="1659" height="158" key="GridCell.Tab.0.bottom/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588559677408" />
+    <state width="1659" height="158" key="GridCell.Tab.0.center" timestamp="1588559677408">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="158" key="GridCell.Tab.0.center/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588559272103" />
-    <state width="1659" height="158" key="GridCell.Tab.0.left" timestamp="1588559272102">
+    <state width="1659" height="158" key="GridCell.Tab.0.center/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588559677408" />
+    <state width="1659" height="158" key="GridCell.Tab.0.left" timestamp="1588559677408">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="158" key="GridCell.Tab.0.left/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588559272102" />
-    <state width="1659" height="158" key="GridCell.Tab.0.right" timestamp="1588559272103">
+    <state width="1659" height="158" key="GridCell.Tab.0.left/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588559677408" />
+    <state width="1659" height="158" key="GridCell.Tab.0.right" timestamp="1588559677408">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="158" key="GridCell.Tab.0.right/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588559272103" />
+    <state width="1659" height="158" key="GridCell.Tab.0.right/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588559677408" />
   </component>
 </project>

@@ -12,11 +12,18 @@ import sys
 def main(args):
     Q = ((int(args[0]), int(args[1]), int(args[2]), int(args[3])),
          (int(args[4]), int(args[5]), int(args[6]), int(args[7])))
-    print(Q)
+    print("Equations: {}".format(Q))
+
+    FAQ1 = constructFA(Q[0])
+    FAQ2 = constructFA(Q[1])
+    print("Finite Automata 1: {}".format(FAQ1))
+    print("Finite Automata 2: {}".format(FAQ2))
+
     return 1
 
-
-def constructFA():
+# this function will construct an FA based off the equations defined
+# in the tuple Q.
+def constructFA(eq):
     return 0
 
 
