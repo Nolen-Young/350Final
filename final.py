@@ -26,9 +26,10 @@ def main(args):
 # in the tuple Q.
 def constructFA(eq, eqNum):
     FA = {}
+    b = findB(eq[3])
     cMax = findCMax(eq)
     kc = findKC(eq[0])
-    count = 0;
+
     for carry in range(-cMax, cMax+1):
         for carryP in range(-cMax, cMax + 1):
             for i in range(1, findKC(eq[3] + 1)):
@@ -36,14 +37,16 @@ def constructFA(eq, eqNum):
                     for a1 in range(2):
                         for a2 in range(2):
                             for a3 in range(2):
-                                if(checkEdge(carry, carryP, i, iP, a1, a2, a3)):
+                                bi = b[i-1]
+                                R = (eq[0] * a1) + (eq[1] * a2) + (eq[2] * a3) + bi + carry
+                                if (R % 2 == 0 and carryP == R / 2):
+                                    if (i >= 1 and i <= kc):
+                                        iP = i + 1
+                                    else:
+                                        iP = i
                                     FA[(carry, i)] = ((a1, a2, a3),(carryP, iP))
-                                    
+
     return FA
-
-
-def checkEdge(carry, carryP, i, iP, a1, a1P, a2, a2P, a3, a3P):
-    return 0
 
 
 # C: a tuple of 3 integers
@@ -74,7 +77,7 @@ def findKC(C):
 
 # this function returns bi, which represents all bits to represent
 # a given constant, C, where C >= 0
-def findBI(C):
+def findB(C):
     kc = findKC(C)
     bi = [0, ] * kc
     binary = str(bin(C))[2:]
