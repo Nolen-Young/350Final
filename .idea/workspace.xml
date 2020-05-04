@@ -6,11 +6,29 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:preparation1" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8332d7b0-1840-4990-855b-d47ea83a7824" name="Default Changelist" comment="" />
+    <list default="true" id="8332d7b0-1840-4990-855b-d47ea83a7824" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final.py" beforeDir="false" afterPath="$PROJECT_DIR$/final.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +66,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/final.py" />
-      <option name="PARAMETERS" value="-3, -0, 4" />
+      <option name="PARAMETERS" value="-3 -0 4" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="false" />
@@ -101,17 +119,29 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="preparation1" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="328" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588549466210">
+    <state x="328" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588556168264">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="328" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588549466210" />
+    <state x="328" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588556168264" />
     <state x="654" y="162" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1588549441816">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -124,21 +154,21 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="654" y="212" key="FileChooserDialogImpl/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588548207883" />
-    <state width="1659" height="272" key="GridCell.Tab.0.bottom" timestamp="1588550076104">
+    <state width="1659" height="272" key="GridCell.Tab.0.bottom" timestamp="1588556265077">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="272" key="GridCell.Tab.0.bottom/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588550076104" />
-    <state width="1659" height="272" key="GridCell.Tab.0.center" timestamp="1588550076104">
+    <state width="1659" height="272" key="GridCell.Tab.0.bottom/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588556265077" />
+    <state width="1659" height="272" key="GridCell.Tab.0.center" timestamp="1588556265076">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="272" key="GridCell.Tab.0.center/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588550076104" />
-    <state width="1659" height="272" key="GridCell.Tab.0.left" timestamp="1588550076103">
+    <state width="1659" height="272" key="GridCell.Tab.0.center/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588556265076" />
+    <state width="1659" height="272" key="GridCell.Tab.0.left" timestamp="1588556265076">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="272" key="GridCell.Tab.0.left/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588550076103" />
-    <state width="1659" height="272" key="GridCell.Tab.0.right" timestamp="1588550076104">
+    <state width="1659" height="272" key="GridCell.Tab.0.left/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588556265076" />
+    <state width="1659" height="272" key="GridCell.Tab.0.right" timestamp="1588556265076">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="272" key="GridCell.Tab.0.right/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588550076104" />
+    <state width="1659" height="272" key="GridCell.Tab.0.right/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588556265076" />
   </component>
 </project>
