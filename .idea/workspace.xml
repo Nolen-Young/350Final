@@ -26,6 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8332d7b0-1840-4990-855b-d47ea83a7824" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Nolen_Young.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final.py" beforeDir="false" afterPath="$PROJECT_DIR$/final.py" afterDir="false" />
     </list>
@@ -53,6 +54,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/final.py" />
   </component>
   <component name="RunManager">
@@ -60,6 +62,9 @@
       <module name="350final" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -154,21 +159,21 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="654" y="212" key="FileChooserDialogImpl/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588548207883" />
-    <state width="1659" height="272" key="GridCell.Tab.0.bottom" timestamp="1588556265077">
+    <state width="1659" height="158" key="GridCell.Tab.0.bottom" timestamp="1588557103259">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="272" key="GridCell.Tab.0.bottom/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588556265077" />
-    <state width="1659" height="272" key="GridCell.Tab.0.center" timestamp="1588556265076">
+    <state width="1659" height="158" key="GridCell.Tab.0.bottom/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588557103259" />
+    <state width="1659" height="158" key="GridCell.Tab.0.center" timestamp="1588557103258">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="272" key="GridCell.Tab.0.center/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588556265076" />
-    <state width="1659" height="272" key="GridCell.Tab.0.left" timestamp="1588556265076">
+    <state width="1659" height="158" key="GridCell.Tab.0.center/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588557103258" />
+    <state width="1659" height="158" key="GridCell.Tab.0.left" timestamp="1588557103258">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="272" key="GridCell.Tab.0.left/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588556265076" />
-    <state width="1659" height="272" key="GridCell.Tab.0.right" timestamp="1588556265076">
+    <state width="1659" height="158" key="GridCell.Tab.0.left/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588557103258" />
+    <state width="1659" height="158" key="GridCell.Tab.0.right" timestamp="1588557103258">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1659" height="272" key="GridCell.Tab.0.right/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588556265076" />
+    <state width="1659" height="158" key="GridCell.Tab.0.right/1680.-314.1920.1040/0.0.1680.1010@0.0.1680.1010" timestamp="1588557103258" />
   </component>
 </project>
