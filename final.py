@@ -16,37 +16,72 @@ def main(args):
     print("Equations: {}\n".format(Q))
 
     # find the FA's representing botch equations
-    FAQ1 = constructFA(Q[0], 1)
-    FAQ2 = constructFA(Q[1], 2)
-    print("Finite Automata 1: {}".format(FAQ1))
-    print("Finite Automata 2: {}\n".format(FAQ2))
+    M1 = constructFA(Q[0])
+    M2 = constructFA(Q[1])
+    print("M1: {}".format(M1))
+    print("M2: {}\n".format(M2))
+
+    # calculate the cartesian product of M1 x M2
+    # this will give us our final graph
+    M = computeCP(M1, M2)
+    print("M: {}\n".format(M))
+
+    # TODO - Find a walk along M, if a walk exists, return yes, else no
 
     return 1
 
 
-# this function will construct an FA based off the equations defined
-# in the tuple Q.
-def constructFA(eq, eqNum):
-    FA = {} # stores final result graph, key: start node, value: edge, end node
-    b = findB(eq[3]) # finds binary representation of C
-    cMax = findCMax(eq) # finds cMax
-    kc = findKC(eq[3]) # finds kc
+# this algorithm computes the cartesian product of two finite
+# automata's, m1 and m2.
+def computeCP(M1, M2):
+    M = {}
 
-    for carry in range(-cMax, cMax+1):
+    # loop through each node in M1, then through edge in that node
+    # then find all matching labeled edges in M2, and add that composite
+    # edge to M
+    for node1, edges1 in M1.items():
+        for edge1 in edges1:
+            for node2, edges2 in M2.items():
+                for edge2 in edges2:
+                    if (edge1[0] == edge2[0]):
+                        node = (node1, node2)
+                        edge = (edge1[0], (edge1[1], edge2[1]))
+                        if node in M.keys():
+                            M[node].append(edge)
+                        else:
+                            M[node] = [edge]
+
+    return M
+
+
+# this function will construct an FA off the equations defined
+# in the tuple Q.
+def constructFA(eq):
+    FA = {}  # stores final result graph, key: start node, value: edge, end node
+    b = findB(eq[3])  # finds binary representation of C
+    cMax = findCMax(eq)  # finds cMax
+    kc = findKC(eq[3])  # finds kc
+
+    # loop through every possible value of a variety of
+    # variables, test each combo to see if it should be in
+    # the graph
+    for carry in range(-cMax, cMax + 1):
         for carryP in range(-cMax, cMax + 1):
-            for i in range(1, findKC(eq[3] + 1)):
-                for iP in range(1, findKC(eq[3] + 1)):
-                    for a1 in range(2):
-                        for a2 in range(2):
-                            for a3 in range(2):
-                                bi = b[i-1] # INDEX MIGHT BE WRONG *************************************************
-                                R = (eq[0] * a1) + (eq[1] * a2) + (eq[2] * a3) + bi + carry
-                                if (R % 2 == 0 and carryP == R / 2):
-                                    if (i >= 1 and i <= kc):
-                                        iP = i + 1
-                                    else:
-                                        iP = i
-                                    FA[(carry, i)] = ((a1, a2, a3),(carryP, iP))
+            for i in range(1, kc + 2):
+                for a1 in range(2):
+                    for a2 in range(2):
+                        for a3 in range(2):
+                            bi = b[i - 2] # INDEX MIGHT BE WRONG *************************************************
+                            R = (eq[0] * a1) + (eq[1] * a2) + (eq[2] * a3) + bi + carry
+                            if (R % 2 == 0 and carryP == R / 2): # test if it is an edge in the FA
+                                iP = i
+                                if (i >= 1 and i <= kc):
+                                    iP = iP + 1
+
+                                if (carry, i) in FA.keys():
+                                    FA[(carry, i)].append(((a1, a2, a3), (carryP, iP)))
+                                else:
+                                    FA[(carry, i)] = [((a1, a2, a3), (carryP, iP))]
 
     return FA
 
