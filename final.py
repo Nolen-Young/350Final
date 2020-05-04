@@ -12,7 +12,8 @@ import sys
 def main(args):
     cMax = findCMax(args)
     print(cMax)
-    print(findKC(15))
+    print(findKC(34))
+    print(findBI(34))
     return 1
 
 
@@ -40,6 +41,19 @@ def findCMax(C):
 # constant, C, where C >= 0
 def findKC(C):
     return math.ceil(math.log2(C + 1))
+
+
+# this function returns bi, which represents all bits to represent
+# a given constant, C, where C >= 0
+def findBI(C):
+    kc = findKC(C)
+    bi = [0, ] * kc
+    binary = str(bin(C))[2:]
+
+    for i in range(kc):
+        bi[i] = int(binary[i])
+
+    return bi
 
 
 # this block of code calls main if the script parameters are correct,
