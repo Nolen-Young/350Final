@@ -28,9 +28,7 @@ def main(args):
 
     # Find a walk along M, if a walk exists, return yes, else no
     kc1 = findKC(Q[0][3])
-    print(kc1)
     kc2 = findKC(Q[1][3])
-    print(kc2)
     test = DFS(M, ((0, 1), (0, 1)), ((0, kc1+1), (0, kc2+1)))
     print("Path: {}".format(test))
 
@@ -47,10 +45,7 @@ def main(args):
 def DFS(M, init, accept):
     visited = set()
     path = ""
-    print(accept)
     path = DFSHelper(visited, M, init, accept, path)
-
-    print(path)
     return path
 
 
@@ -61,7 +56,6 @@ def DFSHelper(visited, graph, node, accept, path):
         visited.add(node)
         for neighbour in graph[node]:
             newPath = "{}, {}".format(path, neighbour[0])
-            print(neighbour[1])
             if neighbour[1] == accept:
                 return newPath
             else:
